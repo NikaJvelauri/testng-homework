@@ -1,35 +1,27 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
-<suite name="All Test Suite">
-    <test name="annotations">
+<!-- Run CheckboxTests and RadioButtonTests classes in parallel-->
+<suite name="All Test Suite" parallel="classes" thread-count="2">
+    <test name="CheckBoxTests">
         <classes>
-
-            <class name="ConfigTests">
-
-            </class>
-
             <class name="CheckboxTests">
                 <methods>
-                 <include name="openBrowser"/>
                     <include name="uncheck"/>
                     <include name="check"/>
-
                 </methods>
             </class>
+        </classes>
+    </test>
 
 
+    <test name="RadioButtonTests">
+        <classes>
             <class name="RadioButtonTests">
                 <methods>
-                    <include name="openBrowser1"/>
                     <include name="selectYes"/>
-                    <include name="selectNo"/>
+                    <exclude name="selectNo"/>
                 </methods>
             </class>
-
-
-
-
-    </classes>
-
+        </classes>
     </test>
 </suite>

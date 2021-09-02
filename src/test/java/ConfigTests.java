@@ -1,26 +1,14 @@
 import com.codeborne.selenide.Configuration;
-import com.codeborne.selenide.Selenide;
-import org.testng.annotations.*;
 import static com.codeborne.selenide.AssertionMode.SOFT;
-
-
+import org.testng.annotations.BeforeClass;
+import org.testng.annotations.BeforeTest;
 
 public class ConfigTests {
 
-    @BeforeSuite
+    @BeforeClass
     public void configarution3() {
-        Configuration.assertionMode = SOFT;
         Configuration.startMaximized = true;
-        Configuration.savePageSource=false;
+        Configuration.savePageSource = false;
+        Configuration.assertionMode = SOFT;
     }
-
-
-    //All tests should be started with new webdriver instance *
-    @AfterSuite
-    public void tearDown() {
-        Selenide.clearBrowserCookies();
-        Selenide.clearBrowserLocalStorage();
-    }
-
-
 }

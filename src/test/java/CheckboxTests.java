@@ -1,42 +1,39 @@
 import com.codeborne.selenide.Configuration;
 import com.codeborne.selenide.testng.SoftAsserts;
-import org.junit.BeforeClass;
-import org.junit.Test;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebElement;
-import org.testng.annotations.BeforeTest;
+import org.testng.annotations.*;
 import com.codeborne.selenide.testng.ScreenShooter;
-import org.testng.annotations.Listeners;
 import org.testng.asserts.SoftAssert;
-import static com.codeborne.selenide.AssertionMode.SOFT;
 import static com.codeborne.selenide.Selenide.$;
 import static com.codeborne.selenide.Selenide.open;
+import static com.codeborne.selenide.Configuration.baseUrl;
+
 
 
 @Listeners({ScreenShooter.class, SoftAsserts.class})
-public class CheckboxTests {
 
+public class CheckboxTests extends ConfigTests {
 
-
-
-
-    @BeforeClass
-    public void screens2(){
-        Configuration.reportsFolder="C:\\Users\\ninja\\IdeaProjects\\TestNG homework\\build\\reports\\tests\\CheckboxFailedTests";
-    }
-
-
-    @Test
     @BeforeTest
-    public void openBrowser(){
+    @Override
+    public void configarution3(){
+        Configuration.reportsFolder="src/main/resources/CheckboxFailedTests";
+        super.configarution3();
+    }
+
+
+    @BeforeMethod
+    public void webOpen(){
+        baseUrl = "http://the-internet.herokuapp.com/checkboxes";
         open("http://the-internet.herokuapp.com/checkboxes");
 
     }
 
 
-    @Test
+    @Test()
     public void uncheck() {
-        open("http://the-internet.herokuapp.com/checkboxes");
+//        open("http://the-internet.herokuapp.com/checkboxes");
         WebElement checkbox = $(By.xpath("//*[@id='checkboxes']/input[2]"));
         checkbox.click();
         SoftAssert softAssert = new SoftAssert();
@@ -45,8 +42,11 @@ public class CheckboxTests {
 
     }
 
-    @Test
+    //Change CheckboxTests methods, make one method dependent on other
+    //Dependent method should not be blocked,if the main method fails
+    @Test(dependsOnMethods = {"uncheck"},alwaysRun=true)
     public void check() {
+//        open("http://the-internet.herokuapp.com/checkboxes");
         WebElement checkbox2 = $(By.xpath("//*[@id='checkboxes']/input[2]"));
         checkbox2.click();
         SoftAssert softAssert = new SoftAssert();
