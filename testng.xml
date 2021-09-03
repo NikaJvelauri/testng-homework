@@ -2,7 +2,15 @@
 <!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
 <!-- Run CheckboxTests and RadioButtonTests classes in parallel-->
 <suite name="All Test Suite" parallel="classes" thread-count="2">
+
+
     <test name="CheckBoxTests">
+        <groups>
+            <run>
+                <include name=".*End"/>
+            </run>
+        </groups>
+        
         <classes>
             <class name="CheckboxTests">
                 <methods>
@@ -10,18 +18,27 @@
                     <include name="check"/>
                 </methods>
             </class>
-        </classes>
-    </test>
+        </classes>    </test>
+
 
 
     <test name="RadioButtonTests">
+        <groups>
+            <run>
+                <include name=".*End"/>
+            </run>
+        </groups>
+
         <classes>
             <class name="RadioButtonTests">
                 <methods>
                     <include name="selectYes"/>
                     <exclude name="selectNo"/>
+                    <include name="forRetry"/>
                 </methods>
             </class>
         </classes>
     </test>
+
+
 </suite>
