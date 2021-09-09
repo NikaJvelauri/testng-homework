@@ -15,7 +15,7 @@ import static com.codeborne.selenide.Configuration.baseUrl;
 
 public class CheckboxTests extends ConfigTests {
 
-    @BeforeTest
+    @BeforeTest(groups = {"FrontEnd"})
     @Override
     public void configarution3(){
         Configuration.reportsFolder="src/main/resources/CheckboxFailedTests";
@@ -23,17 +23,17 @@ public class CheckboxTests extends ConfigTests {
     }
 
 
-    @BeforeMethod
+    @BeforeMethod(groups = {"FrontEnd"})
     public void webOpen(){
         baseUrl = "http://the-internet.herokuapp.com/checkboxes";
-//        open("http://the-internet.herokuapp.com/checkboxes");
+        open("http://the-internet.herokuapp.com/checkboxes");
 
     }
 
     //Add CheckboxTests and RadioButtonTests first method to 'FrontEnd' group and second to 'BackEnd'
     @Test(groups = {"FrontEnd"})
     public void uncheck() {
-        open("http://the-internet.herokuapp.com/checkboxes");
+//        open("http://the-internet.herokuapp.com/checkboxes");
         WebElement checkbox = $(By.xpath("//*[@id='checkboxes']/input[2]"));
         checkbox.click();
         SoftAssert softAssert = new SoftAssert();
@@ -46,7 +46,7 @@ public class CheckboxTests extends ConfigTests {
     //Dependent method should not be blocked,if the main method fails
     @Test(dependsOnMethods = {"uncheck"},alwaysRun=true,groups = {"BackEnd"})
     public void check() {
-        open("http://the-internet.herokuapp.com/checkboxes");
+//        open("http://the-internet.herokuapp.com/checkboxes");
         WebElement checkbox2 = $(By.xpath("//*[@id='checkboxes']/input[2]"));
         checkbox2.click();
         SoftAssert softAssert = new SoftAssert();

@@ -13,7 +13,7 @@ import static com.codeborne.selenide.Selenide.open;
 public class RadioButtonTests extends ConfigTests {
 
 
-    @BeforeTest
+    @BeforeTest(groups = {"FrontEnd"})
     @Override
     public void configarution3(){
         Configuration.reportsFolder="src/main/resources/RadioButtonFailedTests";
@@ -21,7 +21,7 @@ public class RadioButtonTests extends ConfigTests {
 
     }
 
-    @BeforeMethod
+    @BeforeMethod(groups = {"FrontEnd"})
     public void webOpen(){
         Configuration.baseUrl = "https://demoqa.com/radio-button";
 
