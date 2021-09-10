@@ -10,6 +10,8 @@ import java.util.List;
 
 //Write your own implementation of ITestListener methods - onTestSuccess,onTestFailure,onTestSkipped and onTestFailedButWithinSuccessPercentage
 public class ListenersTests implements ITestListener,ISuiteListener {
+
+
     List<ITestNGMethod> passedtests = new ArrayList<ITestNGMethod>();
     List<ITestNGMethod> failedtests = new ArrayList<ITestNGMethod>();
     List<ITestNGMethod> skippedtests = new ArrayList<ITestNGMethod>();

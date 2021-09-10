@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite name="ParameterTests">
+
+
+    <test name="Parameter1">
+
+        <parameter name="firstName" value="Nika"></parameter>
+        <parameter name="lastName" value="Jvelauri"></parameter>
+        <parameter name="mobileNumber" value="555555555"></parameter>
+        <classes>
+            <class name="ParametrizationHomework.Parametrs">
+                <methods>
+                    <include name="practiceForm"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+
+
+    <test name="Parameter2">
+
+        <parameter name="firstName" value="Saxeli"></parameter>
+        <parameter name="lastName" value="Gvari"></parameter>
+        <parameter name="mobileNumber" value="555111213"></parameter>
+        <classes>
+            <class name="ParametrizationHomework.Parametrs">
+                <methods>
+                    <include name="practiceForm"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+
+
+
+
+    <test name="Parameter3">
+
+        <parameter name="firstName" value="FirstName"></parameter>
+        <parameter name="lastName" value="LastName"></parameter>
+        <parameter name="mobileNumber" value="551141617"></parameter>
+        <classes>
+            <class name="ParametrizationHomework.Parametrs">
+                <methods>
+                    <include name="practiceForm"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+
+
+</suite>
