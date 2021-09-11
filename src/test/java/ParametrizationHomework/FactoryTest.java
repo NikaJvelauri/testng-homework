@@ -1,6 +1,7 @@
 package ParametrizationHomework;
 
 import com.codeborne.selenide.Configuration;
+
 import org.openqa.selenium.By;
 import org.testng.annotations.Test;
 
@@ -14,11 +15,14 @@ public class FactoryTest
 {
     public String FirstName = "";
     public String LastName = "";
+    public String Gender = "";
     public String MobileNumber = "";
 
-    public FactoryTest(String firstName,String lastName,String mobileNumber) {
+
+    public FactoryTest(String firstName,String lastName,String Gender,String mobileNumber) {
         this.FirstName = firstName;
         this.LastName = lastName;
+        this.Gender = Gender;
         this.MobileNumber = mobileNumber;
     }
 
@@ -31,7 +35,7 @@ public class FactoryTest
         open("https://demoqa.com/automation-practice-form");
         $(By.xpath("//*[@id='firstName']")).sendKeys(FirstName);
         $(By.xpath("//*[@id='lastName']")).sendKeys(LastName);
-        $(By.xpath("//*[@id='genterWrapper']/div[2]/div[1]/label")).click();
+        $(By.xpath(Gender)).click();
         $(By.xpath("//*[@id='userNumber']")).sendKeys(MobileNumber);
 
         System.out.println("Student Firstname: " + FirstName );

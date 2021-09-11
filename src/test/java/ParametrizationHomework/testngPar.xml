@@ -8,6 +8,7 @@
         <parameter name="firstName" value="Nika"></parameter>
         <parameter name="lastName" value="Jvelauri"></parameter>
         <parameter name="mobileNumber" value="555555555"></parameter>
+        <parameter name="Gender" value="//*[@id='genterWrapper']/div[2]/div[1]/label"></parameter>
         <classes>
             <class name="ParametrizationHomework.Parametrs">
                 <methods>
@@ -23,6 +24,7 @@
         <parameter name="firstName" value="Saxeli"></parameter>
         <parameter name="lastName" value="Gvari"></parameter>
         <parameter name="mobileNumber" value="555111213"></parameter>
+        <parameter name="Gender" value="//*[@id='genterWrapper']/div[2]/div[1]/label"></parameter>
         <classes>
             <class name="ParametrizationHomework.Parametrs">
                 <methods>
@@ -40,6 +42,7 @@
         <parameter name="firstName" value="FirstName"></parameter>
         <parameter name="lastName" value="LastName"></parameter>
         <parameter name="mobileNumber" value="551141617"></parameter>
+        <parameter name="Gender" value="//*[@id='genterWrapper']/div[2]/div[1]/label"></parameter>
         <classes>
             <class name="ParametrizationHomework.Parametrs">
                 <methods>

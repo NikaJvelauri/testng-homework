@@ -13,14 +13,14 @@ public class Parametrs {
 
 
     @Test
-    @Parameters({"firstName","lastName","mobileNumber"})
-    public void practiceForm(String firstName, String lastName, String mobileNumber){
+    @Parameters({"firstName","lastName","mobileNumber","Gender"})
+    public void practiceForm(String firstName, String lastName, String mobileNumber, String Gender){
         //Navigate to the https://demoqa.com/automation-practice-form
         Configuration.startMaximized = true;
         open("https://demoqa.com/automation-practice-form");
         $(By.xpath("//*[@id='firstName']")).sendKeys(firstName);
         $(By.xpath("//*[@id='lastName']")).sendKeys(lastName);
-        $(By.xpath("//*[@id='genterWrapper']/div[2]/div[1]/label")).click();
+        $(By.xpath(Gender)).click();
         $(By.xpath("//*[@id='userNumber']")).sendKeys(mobileNumber);
         //Validate the Student Name value dynamically
         System.out.println("Student name and lastname: " + firstName + " " + lastName);
